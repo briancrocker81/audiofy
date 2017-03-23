@@ -1,3 +1,12 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+  wavesurfer = WaveSurfer.create(
+    container: '#waveform'
+    waveColor: 'violet'
+    progressColor: 'purple')
+  wavesurfer.on 'ready', ->
+    # code that runs after wavesurfer is ready
+    wavesurfer.play()
+    return
+  wavesurfer.load 'https://ia800508.us.archive.org/15/items/LoveThemeFromTheGodfather/02LoveThemeFromTheGodfather.mp3'
+  return
+  console.log('here')
